@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Layout</title>
+   </head>
+   <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "main aside1"
+        "main section"
+        "aside2 aside2"
+        "footer footer";
+    gap: 10px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+header {
+    grid-area: header;
+    background: #cecfd3;
+    padding: 20px;
+}
+
+nav {
+    grid-area: nav;
+    background: #d7dadb;
+    padding: 15px;
+}
+
+main {
+    
+    grid-area: main;
+    background: #dce1e2;
+    padding: 30px;
+}
+
+.aside1 {
+    grid-area: aside1;
+    background: #e2e3e4;
+    padding: 20px;
+}
+
+section {
+    grid-area: section;
+    background: #d5d8d8;
+    padding: 25px;
+}
+
+.aside2 {
+    grid-area: aside2;
+    background: #dadcdf;
+    padding: 20px;
+}
+
+footer {
+    grid-area: footer;
+    background: #e8e9eb;
+    padding: 15px;
+}
+   </style>
+<body>
+    <div class="container">
+        <header>Header</header>
+        <nav>Nav</nav>
+        <main>Main</main>
+        <aside class="aside1">Aside</aside>
+        <section>Section</section>
+        <aside class="aside2">Aside</aside>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
