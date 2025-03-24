@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+   </head>
+   <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.container {
+    width: 600px;
+    margin: auto;
+    background: rgb(186, 202, 224);
+    padding: 10px;
+}
+
+.header, .footer {
+    background: #94aec479;
+    color: rgb(142, 161, 201);
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.content, .more-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.intro, .hero, .features, .more-copy {
+    background: #cfe2f3;
+    padding: 30px;
+    flex: 1;
+    margin: 5px;
+}
+
+.cta {
+    background: #ffeb3b;
+    padding: 15px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.features {
+    text-align: center;
+}
+    </style>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="content">
+            <div class="intro">Intro Copy</div>
+            <div class="hero">Hero Image</div>
+            <div class="cta">Call to Action</div>
+        </div>
+        <div class="features">Features</div>
+        <div class="more-content">
+            <div class="more-copy">More Copy</div>
+            <div class="cta">Call to Action</div>
+        </div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
+
+
+
