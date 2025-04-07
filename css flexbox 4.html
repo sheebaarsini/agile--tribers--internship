@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Example</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+}
+
+header {
+    background: #ddd;
+    padding: 20px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(52, 12, 228);
+}
+
+.feature {
+    background: #ccc;
+    padding: 30px;
+    margin: 20px 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.column {
+    background: #eee;
+    padding: 20px;
+    width: 30%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.column:hover {
+    transform: scale(1.1);
+    background: #ddd;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: #ddd;
+}
+
+
+</style>
+<body>
+
+    
+    <div class="container">
+        <header>
+            <h2>Logo</h2>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Services</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+
+        <section class="feature">
+            <p>Feature</p>
+        </section>
+
+        <section class="columns">
+            <div class="column">Column One</div>
+            <div class="column">Column Two</div>
+            <div class="column">Column Three</div>
+        </section>
+
+        <footer>
+            <p>&copy; Copyright 2011</p>
+        </footer>
+    </div>
+
+</body>
+</html>
