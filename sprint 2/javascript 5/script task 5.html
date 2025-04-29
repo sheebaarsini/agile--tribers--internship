@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+for (let i = 2; i <= 20; i += 2) {
+    console.log(i);
+}
+
+
+for (let i = 1; i <= 20; i += 2) {
+    console.log(i);
+}
+
+
+// Calculate the Factorial of a Number
+function factorial(n) {
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+console.log(factorial(5)); // Change the number to calculate factorial
+
+// Sum of Numbers from 1 to 100
+let sum = 0;
+for (let i = 1; i <= 100; i++) {
+    sum += i;
+}
+console.log("Sum of numbers from 1 to 100:", sum);
+
+// Calculate the Average of Numbers in an Array
+function average(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return arr.length ? sum / arr.length : 0;
+}
+console.log("Average:", average([10, 20, 30, 40, 50]));
+
+// Draw Patterns Using Nested For Loops
+function drawTriangle(rows) {
+    for (let i = 1; i <= rows; i++) {
+        let pattern = '';
+        for (let j = 1; j <= i; j++) {
+            pattern += '* ';
+        }
+        console.log(pattern);
+    }
+}
+drawTriangle(5);
+
+// Print Numbers from 1 to 5
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+
+// Print the First 10 Natural Numbers
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+// Check if the First and Last Number of a List Are the Same
+function checkFirstLastSame(arr) {
+    if (arr.length > 0 && arr[0] === arr[arr.length - 1]) {
+        return true;
+    }
+    return false;
+}
+console.log(checkFirstLastSame([10, 20, 30, 40, 10])); // Output: true
+
+// Print Numbers Divisible by 5
+function printDivisibleByFive(arr) {
+    arr.forEach(num => {
+        if (num % 5 === 0) {
+            console.log(num);
+        }
+    });
+}
+printDivisibleByFive([10, 23, 45, 67, 50, 90]);
+
+// Check Whether a Character is a Vowel or Consonant
+function checkVowelOrConsonant(char) {
+    let vowels = ['a', 'e', 'i', 'o', 'u'];
+    char = char.toLowerCase();
+    if (vowels.includes(char)) {
+        console.log(char + " is a vowel.");
+    } else {
+        console.log(char + " is a consonant.");
+    }
+}
+
+
+// Count Occurrences of Even and Odd Numbers Between 10 and 55
+let evenCount = 0, oddCount = 0;
+for (let i = 10; i <= 55; i++) {
+    if (i % 2 === 0) {
+        evenCount++;
+    } else {
+        oddCount++;
+    }
+}
+console.log("Even count:", evenCount, "Odd count:", oddCount);
+
+
+for (let i = 1; i <= 25; i++) {
+    if (i % 5 !== 0) {
+        console.log(i);
+    }
+}
+
+
+// Calculate the Factorial of Each Element in an Array
+function factorial(n) {
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+function factorialArray(arr) {
+    return arr.map(num => factorial(num));
+}
+console.log("Factorials:", factorialArray([3, 4, 5]));
+
+// Product or Sum of Two Integers
+function productOrSum(a, b) {
+    let product = a * b;
+    return product > 500 ? a + b : product;
+}
+console.log(productOrSum(20, 30));
+
+
+function greatestOfTwo(a, b) {
+    if (a > b) {
+        console.log(`The greatest number is: ${a}`);
+    } else if (b > a) {
+        console.log(`The greatest number is: ${b}`);
+    } else {
+        console.log("Both numbers are equal.");
+    }
+}
+
+// Example Usage
+greatestOfTwo(10, 20);
+greatestOfTwo(30, 15);
+greatestOfTwo(25, 25);
+
+
+
+
+function greatestOfThree(a, b, c) {
+    let greatest = Math.max(a, b, c);
+    console.log(`The greatest number is: ${greatest}`);
+}
+
+// Example Usage
+greatestOfThree(10, 20, 30);
+greatestOfThree(50, 40, 30);
+greatestOfThree(25, 25, 25);
+
+
+function separateNumbers(arr) {
+    let positives = arr.filter(num => num > 0);
+    let negatives = arr.filter(num => num < 0);
+
+    console.log("Positive Numbers:", positives);
+    console.log("Negative Numbers:", negatives);
+}
+
+// Given input
+let x = [23, 4, -6, 23, -9, 21, 3, -45, -8];
+
+// Function call
+separateNumbers(x);
+
+
+
+
+    </script>
+</body>
+</html>

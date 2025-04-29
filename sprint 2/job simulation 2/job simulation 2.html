@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+</head>
+<body>
+  <script>
+    // Capture user input using prompts
+    let a = parseFloat(prompt("Enter the first number:"));
+    let b = parseFloat(prompt("Enter the second number:"));
+    let operation = prompt("Enter the operation (+, -, *, /):");
+
+    // Function to perform calculations
+    function calculate(x, y, op) {
+      switch (op) {
+        case '+':
+          return x + y;
+        case '-':
+          return x - y;
+        case '*':
+          return x * y;
+        case '/':
+          return y !== 0 ? x / y : "Error: Division by zero";
+        default:
+          return "Invalid operation";
+      }
+    }
+
+    // Input validation
+    if (isNaN(a) || isNaN(b)) {
+      console.log("Invalid number input. Please refresh and try again.");
+    } else {
+      let result = calculate(a, b, operation);
+      console.log(`Result of ${a} ${operation} ${b} = ${result}`);
+    }
+  </script>
+</body>
+</html>
