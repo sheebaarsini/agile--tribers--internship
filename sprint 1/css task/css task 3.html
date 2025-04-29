@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Design</title>
+    </head>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.container {
+    width: 600px;
+    border: 10px solid blue;
+    padding: 10px;
+    background-color: rgba(180, 224, 230, 0.87);
+}
+
+.header, .footer {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid blue;
+    margin-bottom: 10px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.menu, .main, .right {
+    border: 2px solid blue;
+    padding: 25px;
+    flex: 1;
+    text-align: center;
+}
+
+
+.menu{
+    
+    grid-area: main;
+    background: #bde6ee;
+    padding: 80px;
+}
+.main {
+    flex-basis: 15%;
+    
+}
+
+.right {
+    flex-basis: 25%;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+/* Hover effect */
+div:hover {
+    background-color: lightblue;
+} 
+    </style>
+<body>
+
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="content">
+            <div class="menu">Menu</div>
+            <div class="main">Main</div>
+            <div class="right">Right</div>
+        </div>
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
