@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout</title>
+    </head>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "section aside"
+        "article aside"
+        "footer footer";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+header {
+    grid-area: header;
+
+    padding: 10px;
+}
+
+nav {
+    grid-area: nav;
+    padding: 10px;
+}
+section {
+    grid-area: section;
+    padding: 10px;
+}
+
+aside {
+    grid-area: aside;
+    padding: 10px;
+}
+
+article {
+    grid-area: article;
+     padding: 10px;
+}
+
+footer {
+    grid-area: footer;
+    padding: 10px;
+}
+    </style>
+<body>
+    <div class="container">
+        <header>Header</header>
+        <nav>Navigation</nav>
+        <section>Section</section>
+        <aside>Aside</aside>
+        <article>Article</article>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Layout</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    border: 2px solid black;
+}
+
+.header, .footer {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.nav {
+ 
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.main {
+    display: flex;
+}
+
+.sidebar {
+    width: 25%;
+    
+    text-align: left;
+    padding: 15px;
+    padding-right: 30px;
+   
+    font-weight: bold;
+   
+}
+.content {
+    width: 100%;
+    padding: 40px;
+    text-align: left;
+    font-weight: bold;
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <header class="header">Header Section</header>
+        <nav class="nav">Navigation Bar</nav>
+        <div class="main">
+            <aside class="sidebar">Index</aside>
+            <section class="content">Content Section</section>
+        </div>
+        <footer class="footer">Footer Section</footer>
+    </div>
+</body>
+</html>
+
+
+
+
