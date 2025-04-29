@@ -1,0 +1,209 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid justify-self: start</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+      gap: 20px;
+      border: 2px solid #ccc;
+      width: 500px;
+      padding: 10px;
+    }
+
+    .item {
+      background-color: lightgreen;
+      width: 60px;
+      height: 60px;
+      justify-self: center; /* default to center */
+    }
+
+    .item:first-child {
+      justify-self: start; /* aligns first item to the start of its cell */
+    }
+
+    p {
+      font-family: monospace;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <p><code>justify-self: flex-start</code></p>
+
+  
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <p>now that we have space to distribute we can use <code>justify-content</code></p>
+
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        border: 1px;
+        margin: 10px;
+        width: 400px;
+        height: 60px;
+    }
+    .item {
+      flex: 1; /* Each item takes equal width */
+      background-color: lightgreen;
+      margin: 10;
+      border-right: 1px solid rgb(31, 30, 30); /* Optional: just for visual separation */
+    }
+    .item:last-child {
+      border-right: none; /* Remove last border */
+    }
+
+    p {
+      font-family: monospace;
+      font-size: 14px;
+    }
+</style>
+<body>  
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+    
+      <p><code>justify-self</code> will do nothing, because theto distributere is no space </p>
+
+      <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+    
+      <p>now that we have space to distribute we can use <code>justify-content</code></p>   
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox No Space Example</title>
+  <style>
+    .container {
+      display: flex;
+      border: 10px solid rgba(128, 128, 128, 0);
+      margin: 10px;
+      width: 400px;
+      height: 60px;
+    }
+
+    .item {
+      flex: 1; /* Each item takes equal width */
+      background-color: lightgreen;
+      margin: 0;
+      border-right: 1px solid rgb(31, 30, 30); /* Optional: just for visual separation */
+    }
+
+    .item:last-child {
+      border-right: none; /* Remove last border */
+    }
+
+    p {
+      font-family: monospace;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <p><code>justify-self</code> will do nothing, because theto distributere is no space </p>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Space Around</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-around; /* Creates space around each item */
+      border: 2px solid #0c0b0b;
+      width: 500px;
+      height: 80px;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+
+    .item {
+      background-color: lightgreen;
+      width: 60px;
+      height: 60px;
+   
+    }
+
+    p {
+      font-family: monospace;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <p>now that we have space to distribute we can use <code>justify-content</code></p>
+
+</body>
+</html>
+
+
