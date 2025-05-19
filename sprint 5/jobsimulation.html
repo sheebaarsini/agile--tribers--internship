@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.controls, #searchInput {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  background: #2bcc02;
+  color: #fff;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #e6030e;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #e9ecef;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+}
+
+li.dragging {
+  opacity: 0.5;
+}
+
+.actions button {
+  margin-left: 5px;
+  background-color: #6c757d;
+}
+
+.actions .edit {
+  background-color: #ffc107;
+}
+
+.actions .delete {
+  background-color: #dc3545;
+}
+
+</style>
+
+   
+<body>
+  <div class="container">
+    <h1>College Student Name List</h1>
+    
+    <div class="controls">
+      <input type="text" id="studentInput" placeholder="Enter student name" />
+      <button id="addBtn">Add Student</button>
+      <button id="clearAllBtn">Clear All</button>
+    </div>
+
+    <input type="text" id="searchInput" placeholder="Search students..." />
+
+    <ul id="studentList"></ul>
+    
+    <p id="studentCount">Total Students: 0</p>
+  </div>
+
+ 
+</body>
+<script>
+    const studentInput = document.getElementById('studentInput');
+const addBtn = document.getElementById('addBtn');
+const studentList = document.getElementById('studentList');
+const studentCount = document.getElementById('studentCount');
+const searchInput = document.getElementById('searchInput');
+const clearAllBtn = document.getElementById('clearAllBtn');
+
+let draggedItem = null;
+
+const updateStudentCount = () => {
+  studentCount.textContent = `Total Students: ${studentList.querySelectorAll('li').length}`;
+};
+
+const createStudentElement = name => {
+  const li = document.createElement('li');
+  li.draggable = true;
+  li.innerHTML = `
+    <span class="student-name">${name}</span>
+    <div class="actions">
+      <button class="edit">Edit</button>
+      <button class="delete">Delete</button>
+    </div>
+  `;
+  return li;
+};
+
+const addStudent = () => {
+  const name = studentInput.value.trim();
+  if (name === '') {
+    alert('Please enter a valid name');
+    return;
+  }
+
+  const li = createStudentElement(name);
+  studentList.appendChild(li);
+  studentInput.value = '';
+  updateStudentCount();
+};
+
+const handleListClick = e => {
+  const target = e.target;
+  const li = target.closest('li');
+  const nameSpan = li.querySelector('.student-name');
+
+  if (target.classList.contains('edit')) {
+    const newName = prompt('Edit student name:', nameSpan.textContent.trim());
+    if (newName && newName.trim()) {
+      nameSpan.textContent = newName.trim();
+    }
+  }
+
+  if (target.classList.contains('delete')) {
+    li.remove();
+    updateStudentCount();
+  }
+};
+
+const filterStudents = () => {
+  const query = searchInput.value.toLowerCase();
+  [...studentList.children].forEach(li => {
+    const name = li.querySelector('.student-name').textContent.toLowerCase();
+    li.style.display = name.includes(query) ? '' : 'none';
+  });
+};
+
+const clearAllStudents = () => {
+  studentList.innerHTML = '';
+  updateStudentCount();
+};
+
+// Drag and drop
+studentList.addEventListener('dragstart', e => {
+  if (e.target.tagName === 'LI') {
+    draggedItem = e.target;
+    e.target.classList.add('dragging');
+  }
+});
+
+studentList.addEventListener('dragend', e => {
+  e.target.classList.remove('dragging');
+  draggedItem = null;
+});
+
+studentList.addEventListener('dragover', e => {
+  e.preventDefault();
+  const afterElement = getDragAfterElement(studentList, e.clientY);
+  if (afterElement == null) {
+    studentList.appendChild(draggedItem);
+  } else {
+    studentList.insertBefore(draggedItem, afterElement);
+  }
+});
+
+const getDragAfterElement = (container, y) => {
+  const draggableElements = [...container.querySelectorAll('li:not(.dragging)')];
+  return draggableElements.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    const offset = y - box.top - box.height / 2;
+    return offset < 0 && offset > closest.offset ? { offset, element: child } : closest;
+  }, { offset: Number.NEGATIVE_INFINITY }).element;
+};
+
+addBtn.addEventListener('click', addStudent);
+studentList.addEventListener('click', handleListClick);
+searchInput.addEventListener('input', filterStudents);
+clearAllBtn.addEventListener('click', clearAllStudents);
+
+</script>
+</html>
+
+
